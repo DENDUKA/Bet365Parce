@@ -1,0 +1,1 @@
+document.getElementsByClassName("ipe-EventViewDetail_MarketGrid gl-MarketGrid gl-MarketGrid-wide")[0].innerHTML;
