@@ -169,7 +169,7 @@ namespace bet365WEBAPI.Models
 		/// Отправка на сервер (для поиска вилок)
 		/// В данном случае сам себе, только на другой контрол
 		/// </summary>
-		internal void SendToServer()
+		internal async void SendToServer()
 		{
 			if (parsedEvent != null)
 			{
@@ -179,7 +179,9 @@ namespace bet365WEBAPI.Models
 				var request = new RestRequest("", Method.Post);
 				request.RequestFormat = DataFormat.Json;
 				request.AddBody(data);
-				client.Execute(request);	
+				var responce = await client.ExecuteAsync(request);
+
+
 			}
 		}
 	}
